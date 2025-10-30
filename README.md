@@ -1,33 +1,32 @@
 # Convert-App (Tauri + React + TypeScript)
 
-Ứng dụng desktop chuyển đổi file (convert) xây dựng bằng **Tauri v2** (Rust) và **React + Vite + TypeScript**.  
+Ứng dụng desktop **chuyển đổi file CAJ sang PDF** (convert CAJ to PDF)  
+xây dựng bằng **Tauri v2** (Rust) và **React + Vite + TypeScript**.  
 Mục tiêu: gọn nhẹ, chạy đa nền tảng, đóng gói bộ cài **NSIS** cho Windows.
+
+> ⚡ Ứng dụng hiện hỗ trợ tính năng **convert CAJ → PDF**.  
+> Trong tương lai sẽ mở rộng thêm nhiều định dạng khác.
+
+---
 
 ## ✨ Tính năng chính
 
-- Giao diện React/Vite nhanh và nhẹ.
-- Khung ứng dụng Tauri: tiêu thụ ít tài nguyên, đóng gói tiện lợi.
-- Có thể mở hộp thoại chọn file, chạy tool chuyển đổi nội bộ, lưu kết quả.
-- Hỗ trợ đóng gói bộ cài **.exe (NSIS)** cho Windows.
-
-> Lưu ý: Bạn có thể tuỳ biến tính năng convert trong thư mục `resources/` và gọi từ Rust/JS tuỳ nhu cầu.
+- Chuyển đổi file **CAJ sang PDF** nhanh và chính xác.
+- Giao diện React/Vite thân thiện, tốc độ cao.
+- Khung ứng dụng Tauri giúp gọn nhẹ, bảo mật và dễ đóng gói.
+- Có thể mở hộp thoại chọn file, lưu kết quả, hiển thị thông báo.
+- Hỗ trợ build file cài đặt `.exe` bằng **NSIS** cho Windows.
 
 ---
 
 ## 🧰 Chuẩn bị môi trường
 
-Trước khi chạy hoặc build app, hãy đảm bảo bạn đã cài đầy đủ các thành phần sau trên hệ điều hành của mình.
+Trước khi chạy hoặc build app, đảm bảo bạn đã cài đầy đủ môi trường.
 
 ### 🪟 Windows / 💻 macOS / 🐧 Linux
 
-1. **Cài Node.js 18+**
-
-   - Tải từ [https://nodejs.org](https://nodejs.org)
-   - Kiểm tra:
-     ```bash
-     node -v
-     npm -v
-     ```
+1. **Cài Node.js 18+**  
+   [https://nodejs.org](https://nodejs.org)
 
 2. **Cài Yarn global**
 
@@ -35,34 +34,24 @@ Trước khi chạy hoặc build app, hãy đảm bảo bạn đã cài đầy �
    npm install -g yarn
    ```
 
-   Sau đó kiểm tra:
-
-   ```bash
-   yarn -v
-   ```
-
 3. **Cài Rust (Rustup)**
 
-   - Chạy trong terminal:
-     ```bash
-     curl https://sh.rustup.rs -sSf | sh
-     ```
-     hoặc trên Windows tải [rustup-init.exe](https://win.rustup.rs)
-   - Kiểm tra:
-     ```bash
-     rustc --version
-     cargo --version
-     ```
+   ```bash
+   curl https://sh.rustup.rs -sSf | sh
+   ```
 
-4. **Cài Tauri CLI (nếu chưa có)**
+   _(hoặc tải [rustup-init.exe](https://win.rustup.rs) cho Windows)_
+
+4. **Cài Tauri CLI**
 
    ```bash
    cargo install tauri-cli --version "^2"
    ```
 
 5. **Windows users:**
-   - Cài **Visual Studio Build Tools** (Desktop development with C++).
-   - Cài **NSIS** để build file `.exe`: [https://nsis.sourceforge.io/Download](https://nsis.sourceforge.io/Download)
+   - Cài **Visual Studio Build Tools (Desktop development with C++)**
+   - Cài **NSIS** để build file `.exe`:  
+     [https://nsis.sourceforge.io/Download](https://nsis.sourceforge.io/Download)
 
 ---
 
@@ -74,7 +63,7 @@ cd convert-app
 yarn
 ```
 
-> Sau khi cài đủ môi trường và clone repo, chỉ cần chạy `yarn` hoặc `yarn install` là tự động cài dependencies.
+> Sau khi cài môi trường, chỉ cần chạy `yarn` hoặc `yarn install` là đủ.
 
 ---
 
