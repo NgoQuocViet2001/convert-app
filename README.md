@@ -14,31 +14,67 @@ Mục tiêu: gọn nhẹ, chạy đa nền tảng, đóng gói bộ cài **NSIS*
 
 ---
 
-## 🧰 Yêu cầu trước khi bắt đầu
+## 🧰 Chuẩn bị môi trường
 
-### Hệ thống
+Trước khi chạy hoặc build app, hãy đảm bảo bạn đã cài đầy đủ các thành phần sau trên hệ điều hành của mình.
 
-- **Node.js 18+** và **Yarn 1.x**
-- **Rust toolchain** (Rustup)
-- **Tauri v2 CLI**
-- **Windows**:
-  - Visual Studio Build Tools (Desktop development with C++)
-  - **NSIS** (để build installer `.exe`)
+### 🪟 Windows / 💻 macOS / 🐧 Linux
 
-### Repo này
+1. **Cài Node.js 18+**
 
-- React 19, Vite 7, TypeScript 5
-- Tauri CLI ^2, @tauri-apps/api ^2
+   - Tải từ [https://nodejs.org](https://nodejs.org)
+   - Kiểm tra:
+     ```bash
+     node -v
+     npm -v
+     ```
+
+2. **Cài Yarn global**
+
+   ```bash
+   npm install -g yarn
+   ```
+
+   Sau đó kiểm tra:
+
+   ```bash
+   yarn -v
+   ```
+
+3. **Cài Rust (Rustup)**
+
+   - Chạy trong terminal:
+     ```bash
+     curl https://sh.rustup.rs -sSf | sh
+     ```
+     hoặc trên Windows tải [rustup-init.exe](https://win.rustup.rs)
+   - Kiểm tra:
+     ```bash
+     rustc --version
+     cargo --version
+     ```
+
+4. **Cài Tauri CLI (nếu chưa có)**
+
+   ```bash
+   cargo install tauri-cli --version "^2"
+   ```
+
+5. **Windows users:**
+   - Cài **Visual Studio Build Tools** (Desktop development with C++).
+   - Cài **NSIS** để build file `.exe`: [https://nsis.sourceforge.io/Download](https://nsis.sourceforge.io/Download)
 
 ---
 
-## 📦 Cài đặt
+## 📦 Cài đặt dự án
 
 ```bash
 git clone <repo-url>
 cd convert-app
 yarn
 ```
+
+> Sau khi cài đủ môi trường và clone repo, chỉ cần chạy `yarn` hoặc `yarn install` là tự động cài dependencies.
 
 ---
 
@@ -48,7 +84,7 @@ yarn
 yarn tauri dev
 ```
 
-hoặc chỉ chạy React:
+hoặc chỉ chạy frontend React:
 
 ```bash
 yarn dev
