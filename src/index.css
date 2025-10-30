@@ -1,0 +1,9 @@
+/* src/index.css */
+@import 'tailwindcss'; /* PHẢI đứng đầu */
+
+/* optional nhưng nên có nếu bạn muốn v4 quét đúng các file */
+@source "../index.html";
+@source "./**/*.{ts,tsx,js,jsx}";
+
+/* nếu bạn có file config riêng, trỏ ở đây */
+@config "../tailwind.config.js";

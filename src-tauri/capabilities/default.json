@@ -1,0 +1,24 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main"],
+  "permissions": [
+    "dialog:default",
+    "dialog:allow-open",
+    "dialog:allow-save",
+
+    {
+      "identifier": "shell:allow-spawn",
+      "with": { "scope": [{ "name": "python" }] }
+    },
+    {
+      "identifier": "shell:allow-execute",
+      "with": { "scope": [{ "name": "python" }] }
+    },
+
+    "core:event:default",
+    "core:path:default",
+    "core:path:allow-basename"
+  ]
+}
