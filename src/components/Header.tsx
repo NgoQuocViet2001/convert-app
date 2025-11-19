@@ -3,6 +3,7 @@ type Props = {
   onClear: () => void;
   canClear: boolean;
 };
+
 export default function Header({ busy, onClear, canClear }: Props) {
   return (
     <header className="flex items-center justify-between">
